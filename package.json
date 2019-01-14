@@ -8,7 +8,8 @@
     "build": "rollup -c",
     "lint": "eslint '**/*js'",
     "lint:fix": "prettier-eslint '**/*js' --write",
-    "build:watch": "rollup -c -w"
+    "build:watch": "rollup -c -w",
+    "start:server": "node dist/bundle.cjs.js"
   },
   "husky": {
     "hooks": {
@@ -27,7 +28,10 @@
   ],
   "author": "Benny Ogidan",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  },
   "devDependencies": {
     "eslint": "^5.12.0",
     "eslint-config-standard": "^12.0.0",
