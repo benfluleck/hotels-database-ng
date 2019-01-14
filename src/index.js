@@ -1,13 +1,10 @@
 import express from 'express'
-import logger from 'morgan'
+import setGlobalMiddleware from './middleware/setGlobalMiddleware'
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
-app.use(logger('dev'))
-
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+setGlobalMiddleware(app)
 
 app.all('*', (request, response) =>
   response.send({
