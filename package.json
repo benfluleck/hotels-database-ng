@@ -7,7 +7,9 @@
     "prebuild": "rm -rf dist",
     "build": "rollup -c",
     "lint": "eslint '**/*js'",
-    "lint:fix": "prettier-eslint '**/*js' --write"
+    "lint:fix": "prettier-eslint '**/*js' --write",
+    "build:watch": "rollup -c -w",
+    "start:server": "node dist/bundle.cjs.js"
   },
   "husky": {
     "hooks": {
@@ -26,7 +28,10 @@
   ],
   "author": "Benny Ogidan",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  },
   "devDependencies": {
     "eslint": "^5.12.0",
     "eslint-config-standard": "^12.0.0",
@@ -39,6 +44,7 @@
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
     "rollup": "^1.1.0",
-    "rollup-plugin-node-resolve": "^4.0.0"
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-watch": "^4.3.1"
   }
 }
