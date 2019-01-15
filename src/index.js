@@ -1,8 +1,10 @@
 import express from 'express'
-import setGlobalMiddleware from './middleware/setGlobalMiddleware'
+import setGlobalMiddleware from './middleware/global'
 
 const app = express()
 const PORT = process.env.PORT || 3000
+
+require('dotenv').config()
 
 setGlobalMiddleware(app)
 
