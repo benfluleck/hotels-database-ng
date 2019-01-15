@@ -1,2 +1,3 @@
 dist
-src/models/index.js
+src/models/*
+src/migrations/*
