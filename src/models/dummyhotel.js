@@ -1,18 +1,19 @@
-'use strict'
-module.exports = function(sequelize, DataTypes) {
-  var DummyHotel = sequelize.define(
-    'DummyHotel',
-    {
-      name: DataTypes.STRING,
-      location: DataTypes.STRING
-    },
-    {
-      classMethods: {
-        associate: function(models) {
-          // associations can be defined here
-        }
-      }
-    }
-  )
-  return DummyHotel
+const Sequelize = require('sequelize')
+
+class DummyHotel extends Sequelize.Model {
+  static init(sequelize, DataTypes) {
+    return super.init(
+      {
+        name: DataTypes.STRING,
+        location: DataTypes.STRING
+      },
+      { sequelize }
+    )
+  }
+
+  static associate(models) {
+    // define associations here
+  }
 }
+
+module.exports = DummyHotel
