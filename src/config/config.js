@@ -1,5 +1,7 @@
 const operatorsAliases = require('./operatorsAliases')
 
+require('dotenv').config()
+
 console.log(process.env, 'env')
 
 module.exports = {
@@ -11,10 +13,10 @@ module.exports = {
     }
   },
   test: {
-    username: 'root',
-    password: null,
-    database: 'database_test',
-    host: '127.0.0.1',
+    username: process.env.TEST_USERNAME,
+    password: process.env.TEST_PASSWORD,
+    database: process.env.TEST_DB,
+    host: process.env.TEST_HOST,
     dialect: 'sqlite'
   }
 }
