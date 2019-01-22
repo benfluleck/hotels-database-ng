@@ -2,8 +2,6 @@ const operatorsAliases = require('./operatorsAliases')
 
 require('dotenv').config()
 
-console.log(process.env, 'env')
-
 module.exports = {
   development: {
     url: process.env.DATABASE_URL,
