@@ -1,3 +1,5 @@
+const dependencies = Object.keys(require('./package.json').dependencies)
+
 const dist = 'dist'
 
 export default {
@@ -11,5 +13,6 @@ export default {
       file: `${dist}/bundle.cjs.js`,
       format: 'cjs'
     }
-  ]
+  ],
+  external: dependencies
 }
