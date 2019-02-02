@@ -11,10 +11,7 @@ module.exports = {
     }
   },
   test: {
-    username: process.env.TEST_USERNAME,
-    password: process.env.TEST_PASSWORD,
-    database: process.env.TEST_DB,
-    host: process.env.TEST_HOST,
-    dialect: 'sqlite'
+    dialect: 'sqlite',
+    storage: ':memory'
   }
 }
